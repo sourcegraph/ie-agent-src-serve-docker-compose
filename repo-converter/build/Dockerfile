@@ -5,7 +5,7 @@
 # https://sourcegraph.com/search?q=context:global+%23+syntax%3Ddocker/dockerfile:(.*)&patternType=regexp&sm=0&expanded=&groupBy=group
 
 # Using Ubuntu LTS
-FROM ubuntu:22.04 as base
+FROM ubuntu:24.04@sha256:2e863c44b718727c860746568e1d54afd13b2fa71b160f5cd9058fc436217b30 as base
 
 # Avoid stuck build due to user prompt
 ARG DEBIAN_FRONTEND=noninteractive
