@@ -2,7 +2,7 @@ services:
 
   cloud-agent:
     container_name: cloud-agent
-    image: index.docker.io/sourcegraph/src-tunnel-agent:latest
+    image: index.docker.io/sourcegraph/src-tunnel-agent:latest@sha256:dcf046050e194c01d4af572328c6391d53ef23d7091ec736bdadfbef9586c025
     volumes:
       - ../config/cloud-agent-service-account-key.json:/sourcegraph/cloud-agent-service-account-key.json:ro
       - ../config/cloud-agent-config.yaml:/sourcegraph/cloud-agent-config.yaml:ro
@@ -14,7 +14,7 @@ services:
   src-serve-git:
     # Uses a valid hostname as container_name, to trick the cloud agent and code host config into finding this container on the Docker network
     container_name: src-serve-git-ubuntu.local
-    image:  index.docker.io/sourcegraph/src-cli:latest
+    image:  index.docker.io/sourcegraph/src-cli:latest@sha256:443ee36c4b46ef8a8bb1bce42a806ccfccda2c312f1a2033489b48545e3b60d6
     volumes:
       - ../../../sg/src-serve-root/:/sourcegraph/src-serve-root:ro
     command: "serve-git -addr :443 /sourcegraph/src-serve-root"
